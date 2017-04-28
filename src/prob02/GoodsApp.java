@@ -15,6 +15,7 @@ public class GoodsApp {
 			String info = scanner.nextLine();
 			String[] tokens = info.split(" ");
 			Goods gd = new Goods();
+			
 			gd.setName(tokens[0]);
 			gd.setPrice(Integer.parseInt( tokens[1] ));
 			gd.setCountStock(Integer.parseInt( tokens[2] ));

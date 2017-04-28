@@ -1,9 +1,9 @@
 package prob04;
 
 public class StringUtil {
-    private static String d = "";
 
 	public static String concatenate(String[] str) {
+		String d = "";
     		for (int i=0; i<str.length; i++) {
     			d += str[i];
     		}
