@@ -8,24 +8,28 @@ public class CalcApp {
 		Scanner scanner = new Scanner(System.in);
 		String input;
 		while( true ) { 
-			System.out.print(">>");
+			System.out.print(">> ");
 			input = scanner.nextLine();
 			String[] str = input.split(" ");
+			
+			Arithmetic cal;
 
-			if (str[1] == "+")
-				Add cal = new Add();
-			else if (str[1] == "-")
-				Sub cal = new Sub();
-			else if (str[1] == "/")
-				Div cal = new Div();
-			else if (str[1] == "*")
-				Mul cal = new Mul();
-			cal.setValue(Integer.parseInt(str[1]), Integer.parseInt(str[3]));
-			cal.calculator();
-			/*  코드를 완성 합니다. */
+			switch(str[1]) {
+			case "+":
+				cal = new Add();
+			case "-":
+				cal = new Sub();
+			case "/":
+				cal = new Div();
+			case "*":
+				cal = new Mul();
+			
+			cal.setValue(Integer.parseInt(str[0]), Integer.parseInt(str[2]));
+			System.out.println(">> " + cal.calculate() + "\n>> quit");
 			break;
+			}
+			/*  코드를 완성 합니다. */
 		}
-		
-		scanner.close();
 	}
 }
+

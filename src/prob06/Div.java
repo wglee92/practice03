@@ -1,14 +1,14 @@
 package prob06;
 
-public class Div {
+public class Div implements Arithmetic {
 	private int a;
 	private int b;
 	
-	int calculate() {
+	public int calculate() {
 		return a/b;
 	}
 	
-	void setValue(int a, int b) {
+	public void setValue(int a, int b) {
 		this.a = a;
 		this.b = b;
 	}
