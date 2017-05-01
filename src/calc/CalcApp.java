@@ -1,4 +1,5 @@
-package prob06;
+package calc;
+
 
 import java.util.Scanner;
 
@@ -6,32 +7,48 @@ public class CalcApp {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String input;
+
 		while( true ) { 
 			System.out.print(">> ");
-			input = scanner.nextLine();
+			String input = scanner.nextLine();
+			if (input.equals("quit"))
+				break;
+			
 			String[] str = input.split(" ");
 			
-			Arithmetic cal = null;
+			Arith cal = null;
 
 			switch(str[1]) {
-			case "+":
+			case "+": {
 				cal = new Add();
 				break;
-			case "-":
+			}
+			case "-": {
 				cal = new Sub();
 				break;
-			case "/":
+			}
+			case "/": {
 				cal = new Div();
 				break;
-			case "*":
+			}
+			case "*": {
 				cal = new Mul();
 				break;
 			}
+			default : {
+				break;
+			}
+			}
+			
+			if (str[1] == null) {
+				System.out.println(">>지원 안하는 연산");
+				continue;
+			}
+			
+			
 			cal.setValue(Integer.parseInt(str[0]), Integer.parseInt(str[2]));
-			System.out.println(">> " + cal.calculate() + "\n>> quit");
+			System.out.println(">> " + cal.calculate());
 			/*  코드를 완성 합니다. */
 		}
 	}
 }
-
